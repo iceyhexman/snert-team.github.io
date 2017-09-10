@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>招新 | SNERT</title>
+
+  <link rel="stylesheet" type="text/css" href="dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/icon.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/transition.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/modal.css">
+  <link rel="stylesheet" type="text/css" href="dist/components/dimmer.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="dist/components/visibility.js"></script>
+  <script src="dist/components/sidebar.js"></script>
+  <script src="dist/components/transition.js"></script>
+  <script src="dist/components/modal.js"></script>
+  <script src="dist/components/dimmer.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+
+    //handle dom event
+    $(function(){
+    $("#read_more").bind("click",function(){
+      $('.ui.basic.modal')
+      .modal('show');
+	    })
+    })
+  ;
+
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu" id="sticky">
+  <div class="ui container">
+    <a class="item" href="#p1">一段微小的介绍</a>
+    <a class="item" href="#p2">团队介绍</a>
+    <a class="item" href="#p3">招新流程</a>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="item" href="#p1">一段微小的介绍</a>
+  <a class="item" href="#p2">团队介绍</a>
+  <a class="item" href="#p3">招新流程</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="#p1">一段微小的介绍</a>
+        <a class="item" href="#p2">团队介绍</a>
+        <a class="item" href="#p3">招新流程</a>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        SNERT - 招新
+      </h1>
+      <h2>Never naive.</h2>
+      <a class="ui huge primary button" target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e872c1a00f5626e57e325b317770ee13a667ed9f7b81c466528cc45181824f0d">加入我们 <i class="right arrow icon"></i></a>
+    </div>
+
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header" id="p1">>>一段微小的介绍</h3>
+          <p>
+            我们团队已经有很多年的历史了，你问我SNERT团队好不好，当然是好啊。计科院也支持我们吗，当然支持了。最近大家了解到一些消息说我们不好，让大家去别的团队，
+		        我们对这个看法有什么回应呢？没这回事，不管是谁说的，你们这些萌新啊千万要记着，不要见得风是得雨，听到这些消息，你们本身也要判断，民白吗？驾驶这些完全无中生有的
+		        东西，你再帮他宣传一遍，你等于。。。你也有泽任吧。当然了，来我们团队还可以更有利于加入信安实验室。只要你愿意多学习，丰富一下自己的人生经验，很快就能进入实验室，
+		        我们这么说也不是钦定，内定谁可以进，谁不能进。我们还是按照基本法来产生的。当然了，你们刚才要是问我怎样才能进实验室，我也可以回答一句“无可奉告”，你们也不高兴，那
+		        怎么办？我的意思，不是钦点谁进实验室。你们问我支不支持你们进实验室，我是支持的，我就明确告诉你们，有直接进实验室这种想法的人，还是naive，大家还是都需要学习，你们很
+      		  董玩游戏的那一套，你们毕竟还是too young。有几个大佬，比你们不知道高到哪里去了，我们和他谈笑风生。你们啊还需要学习一个，我们是作为一个长者来跟你们讲的
+		        ，来SNERT团队是你们很好的选择。来SNERT就像回家一样，可能有的同学一年都回不了一次家，在SNERT里的感觉不会比回家差，里面的大佬们个个都是人才，说话又好听。不要老想着闷
+		        声发大财，可以帮我们宣传一下。
+          </p>
+          <h4 class="ui horizontal header divider">
+            <div>人家是正经的分割线喵~</div>
+          </h4>
+          <h3 class="ui header" id="p2">>>团队介绍</h3>
+          <p>
+            SNERT是西南科技大学校园网络应急响应小组（SWUST Net Emergency Response Team）的缩写<br>
+		        我们不是社团，我们是计院直属的6支团队之一.并且是全校唯一一支安全方向的团队.<br>
+		        我们有逗比的团队氛围，随心所欲的组织纪律，和精通不同方向的大牛指点迷津<br>
+		        如果你对安全感兴趣，想成为白帽子，欢迎加入我们.<br>
+		        招新面向全校（专业不限，年级不限，性别不限妹子优先(逃<br>
+		        有任何问题都可以在招新群中提问.<br>
+            妹子的话可以加学长qq 1574312315一对一答疑(逃*2
+          </p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="assets/images/wireframe/sanlian.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>>Tips1</h3>
+          <p>许多人都是从零基础开始的，有没有基础并不重要</p>
+		      <p>只要你肯学,"不会"永远不是问题</p>
+        </div>
+        <div class="column">
+          <h3>>Tips2</h3>
+		      <p>我们会提供任何你需要的帮助</p>
+		      <p>招新并不看你的实力，而是学习的态度</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header" id="p3">>>招新流程</h3>
+      <p>宣传 => 宣讲会 => 公布题目 => 最终审核</p>
+      <button class="ui large button" id="read_more">戳我看更多细节qvq</button>
+
+      <div class="ui basic modal">
+        <div class="header">详细流程</div>
+        <div class="content">
+          <p>1.宣讲会<br>宣讲会会在第二周周五(9月15号)晚上7点在西七311进行，欢迎大家来围观.届时将演示前一阵的MS17-010 永恒之蓝漏洞利用.</p>
+          <p>2.招新题<br>招新题将于宣讲会结束后在招新群内公布.</p>
+          <p>3.审核<br>我们将会根据题目完成后提交的文档进行审核，确定最终加入的成员.</p>
+        </div>
+      </div>
+
+      <h4 class="ui horizontal header divider">
+        <div>~</div>
+      </h4>
+
+  </div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui inverted equal height grid">
+        <h4 class="ui inverted">©SNERT 2007-2017</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+//fix sidebar scrolling bug
+if($(window).width()<701){
+  $("#sticky").remove();
+}
+
+/*BUG: when click on mobile, sidebar has wrong active.*/
+
+</script>
+</body>
+</html>
