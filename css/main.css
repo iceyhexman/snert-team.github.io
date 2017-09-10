@@ -5,8 +5,3 @@ h4.ui.inverted{
 p{
   line-height: 1.8;
 }
-
- /* BUG: fixed */
-.ui.vertical.stripe{
-  padding-bottom: 0 !important;
-}
